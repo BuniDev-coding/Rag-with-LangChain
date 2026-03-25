@@ -3,10 +3,12 @@
 # ============================================================
 # pip install langchain langchain-community langchain-openai chromadb
 
-import os
+from dotenv import load_dotenv
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
+
+load_dotenv()   # โหลด .env file
 from langchain_community.vectorstores import Chroma
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.documents import Document
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnablePassthrough
@@ -15,7 +17,7 @@ from langchain_core.output_parsers import StrOutputParser
 # ────────────────────────────────────────────
 # 0. Config
 # ────────────────────────────────────────────
-os.environ["OPENAI_API_KEY"] = "sk-..."   # ใส่ API key ของคุณ
+# API key โหลดจาก .env อัตโนมัติ (ห้าม hardcode ใน code!)
 
 # ────────────────────────────────────────────
 # 1. เอกสารตัวอย่าง (แทน PDF หรือ database)
