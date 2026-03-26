@@ -1,4 +1,4 @@
-# Rag-with-Local-LLM
+# Rag-with-LangChain
 
 
 ![alt text](image.png)
